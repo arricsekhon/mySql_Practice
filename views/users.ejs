@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users Table of <%= count%> </h1>
+    <table>
+        <form action="/user/add" method="GET">
+            <button type="submit">Add User</button>
+        </form>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>password</th>
+        </tr>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td><%= user.password %></td>
+                <td><form method="GET" action= "user/<%= user.id %>/edit" method="GET">
+                    <button type="submit">Edit UserName</button>
+                </form></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

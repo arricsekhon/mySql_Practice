@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit User : <%= user.username%></h1>
+    <form action="/user/<%= user.id %>?_method=PATCH" method="POST">
+        <textarea name="username" id="" cols="10" rows="10"><%= user.username%></textarea>
+        <input type="password" name="password" >
+        <button type="submit">Update</button>
+    </form>
+    <form action="/user/<%= user.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>    
+</body>
+</html>
